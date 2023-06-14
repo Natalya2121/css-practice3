@@ -1,0 +1,120 @@
+/* :root {
+  background: purple;
+}
+
+html {
+  max-width: 720px;
+}
+
+
+ {
+  background: blue;
+} 
+
+body {
+  background: #fff;
+}
+
+h1 {
+  color: green;
+}
+
+h1 {
+  color: orange;
+}
+
+.box {
+  background: #928f97;
+}
+
+#user {
+  color: blue;
+}
+
+div > p {
+  color: aqua;
+}
+
+div p {
+  color: aqua;
+} */
+
+#test:target {
+  color: red;
+}
+
+.link:link{
+  color: red;
+}
+
+.link:hover{
+  color: green;
+}
+
+.link:active {
+  color: purple;
+}
+
+input {
+  background-color: grey;
+}
+
+input:focus {
+  background-color: red;
+}
+
+.card:focus-within {
+  background-color: red;
+}
+
+.card:lang(fr) > span::after {
+ content: "(fr)"
+}
+
+.card-dark {
+  background: hwb(0 87% 11%);
+}
+
+button {
+  background-color: greenyellow;
+}
+
+button:enabled {
+  background-color: green;
+}
+
+button:disabled {
+  background-color: aqua;
+}
+
+.inp:read-write {
+  background-color: blue;
+}
+
+.inp:read-only {
+  background-color: red;
+}
+
+input[type="checkbox"]:checked ~ span {
+  background-color: red;
+}
+
+.valid:valid {
+  background-color: yellow;
+}
+
+.valid:invalid {
+  background-color: red;
+}
+
+.valid:optional {
+  background-color: green;
+}
+
+.number:out-of-range {
+  background-color: brown;
+}
+
+.number:in-range{
+  background-color: gray;
+}
