@@ -1,3 +1,7 @@
+:root {
+  --text-color: #212529;
+}
+
 .page {
   background: #FFFFFF;
   padding: 0 15px;
@@ -78,7 +82,7 @@
 
 .footer_title {
   font-size: 20px;
-  color: #212529;
+  color: var(--text-color,red);
   display: block;
   margin-bottom: 12px;
 }
@@ -162,6 +166,7 @@
   outline: 2px solid blue;
   outline-offset: 5px;
   cursor: pointer;
+  opacity: 0.5;
 }
 
 h1 {
@@ -176,15 +181,87 @@ h1 {
 p {
   background: gray;
   line-height: 1.cap;
-  width: 200px;
-  height: 100px;
+  width: 600px;
+  height: 300px;
   /* overflow-x: hidden;
   overflow-y: scroll; */
   /* text-overflow: ellipsis;
   white-space: nowrap;
   overflow-wrap: anywhere;
   word-break: break-all; */
-  word-spacing: 10px;
+  /* word-spacing: 10px;
   overflow: auto;
-  resize: both;
+  resize: both; */
+}
+
+
+body {
+  background: radial-gradient(50% 50% at 50% 50%, #C57676 0%, rgba(217, 217, 217, 0) 100%);
+}
+
+.page {
+  /* background-image: url('/img/test2.webp');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover; */
+
+  
+}
+
+
+.hero_text {
+  /* background: transparent; */
+  border-image-source: url('/img/test2.webp');
+  border-image-width: 10%;
+  border-image-slice: 10%;
+
+  border-image-outset: 40px;
+  
+}
+
+.card_block {
+  list-style-type: disc;
+  list-style-position: inside;
+}
+
+.card_description_item {
+  display: list-item;
+}
+
+.table tr td {
+  border: 1px solid red;
+  border-bottom-color: green;
+  border-right-color: blue;
+}
+
+.table {
+  table-layout: fixed;
+  width: 600px;
+  border-collapse: unset;
+  border-spacing: 10px 5px;
+  caption-side: top;
+  empty-cells: hide;
+}
+
+.nav_link::before, 
+.nav_link::after {
+  content: '';
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background-image: url('/img/test2.webp');
+}
+
+.nav_link::after {
+  margin-left: 15px;
+}
+
+.nav_link::before {
+  margin-right: 15px;
+}
+
+.calc {
+  width: 600px;
+  /* margin-right: calc(100% - 600px); */
+  margin-left: calc(50% - (600px / 2));
 }
