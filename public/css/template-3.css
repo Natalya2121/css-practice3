@@ -1,3 +1,26 @@
+@keyframes fly {
+  form {
+    top: 0;
+    left: 0;
+    background-color: pink;
+  }
+  25% {
+    top: 500px;
+    left: 500px;
+    background-color: red;
+    width: 150%;
+  }
+  50% {
+    left: 0;
+    background-color: blue;
+    width: 100px;
+  }
+  to {
+    top: 0;
+    left: 0;
+    background-color: purple;
+  }
+}
 
 :root {
   --space-m: 12px;
@@ -19,6 +42,8 @@
 
   --weight-title: 500;
   --weight-text: 400;
+
+  --page-width: 960px;
 }
 
 /* ============================= */
@@ -39,6 +64,8 @@
   flex-direction: column;
   
   gap: 80px;
+
+  padding-top: 74px;
 }
 
 /* ============================= */
@@ -49,6 +76,78 @@
   
   display: flex;
   justify-content: space-between;
+
+  position: sticky;
+  /* fixed; */
+  max-width: var(--page-width);
+  width: 100%;
+
+  top: 0;
+  /* left: calc(50% - var(--page-width) / 2 ); */
+
+  background-color: var(--color-white);
+
+  z-index: 1;
+}
+
+.input {
+  caret-color: #ec920b;
+ border: 1px solid var(--color-text);
+}
+
+.modal {
+  position: fixed;
+  /* sticky; */
+  /* fixed; */
+  /* top: 24px;
+  right: 24px; */
+
+  top: 200px;
+  right: 200px;
+
+  /* height: 100px; */
+  width: 600px;
+
+  background: black;
+  color: var(--color-white);
+
+  padding: 24px;
+  border-radius: 24px;
+
+  line-height: 150%;
+
+  z-index: 2;
+
+  /* transition-property: top;
+  transition-duration: 3s;
+  transition-timing-function: cubic-bezier(0.6, -0.28, 0.735, 0.045);
+  transition-delay: 1s; */
+}
+
+body:hover .modal {
+  /* top: 600px */
+  animation-name: fly;
+  animation-duration: 3s;
+  /* animation-iteration-count: infinite; */
+  animation-delay: 1s;
+  animation-direction: reverse;
+  animation-fill-mode: both;
+   /* -webkit-animation-fill-mode: forwards; */
+}
+
+
+.modal_image {
+  width: 50px;
+  height: 300px;
+  float: left;
+  margin-right: 12px;
+
+  object-fit: cover;
+  /* contain; */
+}
+
+.hero {
+  user-select: none;
 }
 
 .logo {
@@ -85,6 +184,9 @@
   letter-spacing: 0em;
   text-align: left;
   text-decoration: none;
+
+  transition-property: color;
+  transition-duration: 1s;
 }
 
 .nav_link:hover {
@@ -222,6 +324,10 @@
   font-size: var(--size-d);
   text-decoration: none;
   border-radius: var(--border-radius);
+
+  /* transition: opacity 1s; */
+  transition-property: opacity, background-color, color;
+  transition-duration: 1s;
 }
 
 .button:hover {
@@ -233,4 +339,38 @@
   width: 100%;
   max-width: 160px;
   color: var(--color-text);
+}
+
+.hero_slider_icon {
+  background: var(--color-primary);
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: var(--border-radius);
+  color: var(--color-white);
+
+  position: absolute;
+  /* fixed; */
+  /* absolute; */
+
+  top: calc(50% - 15px)
+}
+
+.hero_slider_icon:hover {
+  opacity: 0.5;
+  cursor: pointer;
+}
+
+.hero_slider {
+  position: relative;
+}
+
+.hero_slider_right {
+  right: var(--space-l);
+}
+
+.hero_slider_left {
+  left: var(--space-l);
 }
