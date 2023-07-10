@@ -1,3 +1,25 @@
+@import '/css/var.css';
+
+@font-face {
+  font-family: 'Segment';
+  src: url('/font/Segment-Regular.otf');
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'Segment';
+  src: url('/font/Segment-SemiBold.otf');
+  font-weight: 600;
+}
+
+@layer main, secondary;
+
+@layer secondary {
+  .card_button {
+    background-color: red;
+  }
+}
+
 @keyframes fly {
   form {
     top: 0;
@@ -22,29 +44,6 @@
   }
 }
 
-:root {
-  --space-m: 12px;
-  --space-xm: 16px;
-  --space-l: 24px;
-  --space-b: 36px;
-
-  --size-s: 14px;
-  --size-d: 16px;
-  --size-l: 20px;
-
-  --color-border: #DEE2E6;
-  --color-primary: rgb(46, 46, 255);
-  --color-white: #fff;
-  --color-title: #212529;
-  --color-text: #343A40;
-
-  --border-radius: 12px;
-
-  --weight-title: 500;
-  --weight-text: 400;
-
-  --page-width: 960px;
-}
 
 /* ============================= */
 
@@ -286,9 +285,11 @@ body:hover .modal {
   color: var(--color-text);
 }
 
+@layer main {
 .card_button {
   color: var(--color-white);
   background-color: var(--color-primary);
+}
 }
 
 .form {
@@ -373,4 +374,64 @@ body:hover .modal {
 
 .hero_slider_left {
   left: var(--space-l);
+}
+
+.blog {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+/* @media all and (min-width: 601px) and (max-width: 800px)  */
+@media all and (600px < width <= 800px) 
+{
+  .blog {
+    grid-template-columns: repeat(2, 1fr);
+  }  
+}
+
+/* @media all and (min-width: 0px) and (max-width: 600px) , */
+@media all and (width <= 600px) ,
+all and (min-width: 1000px)
+{
+  .blog {
+    grid-template-columns: 1fr;
+  }  
+}
+
+.form {
+  gap: var(--space-l);
+}
+
+@media all and (width <= 560px) {
+  .form {
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  .form_info {
+    max-width: 300px;
+    width: 100%;
+    line-height: 150%;
+  }
+
+  .form_content {
+    align-items: center;
+    text-align: center;
+  }
+}
+
+.hero_container {
+  container-type: inline-size;
+  container-name: hero;  
+}
+
+@container hero (width < 960px) {
+  .hero {
+    flex-direction: column;
+  }
+}
+.hero_title {
+  font-family: 'Segment';
+  font-size: 5cqw;
 }
