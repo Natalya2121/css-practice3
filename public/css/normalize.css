@@ -1,4 +1,5 @@
-@layer normalize, main, secondary;
+/* @layer normalize, main, secondary; */
+@layer normalize, block, element, mod, main, secondary, adaptive;
 
 @layer normalize {
 /* Document
